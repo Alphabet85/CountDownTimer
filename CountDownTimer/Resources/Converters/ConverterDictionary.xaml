@@ -1,0 +1,31 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converters="clr-namespace:CountDownTimer.Resources.Converters">
+	<!-- ******************************************************************************************************** -->
+	<converters:IntValueToRightOrLeftConverter x:Key="IntValueToRightOrLeftConverter"/>
+	<converters:IntBitValueToYesorNoConverter x:Key="IntBitValueToYesorNoConverter"/>
+	<converters:IntValueToNotGoodOrFaultConverter x:Key="IntValueToNotGoodOrFaultConverter"/>
+	<converters:IntBitValueToNotYesorNoConverter x:Key="IntBitValueToNotYesorNoConverter"/>
+	<converters:BooleanToVisibilityCollapsedConverter x:Key="BooleanToVisibilityCollapsedConverter"/>
+	<converters:BooleanToVisibilityHiddenConverter x:Key="BooleanToVisibilityHiddenConverter"/>
+	<converters:BooleanNotToVisibilityCollapsedConverter x:Key="BooleanNotToVisibilityCollapsedConverter"/>
+	<converters:BooleanNotToVisibilityHiddenConverter x:Key="BooleanNotToVisibilityHiddenConverter"/>
+	<converters:IntValueToColorConverter x:Key="IntValueToColorConverter"/>
+	<converters:IntBitValueToGoodOrBadConverter x:Key="IntBitValueToGoodOrBadConverter"/>
+	<converters:BooleanToGoodOrBadConverter x:Key="BooleanToGoodOrBadConverter"/>
+	<converters:BooleanToColorConverter x:Key="BooleanToColorConverter"/>
+	<converters:IntBitValueToActiveOrInactiveConverter x:Key="IntBitValueToActiveOrInactiveConverter"/>
+	<converters:IntBitValueToRadiationModeConverter x:Key="IntBitValueToRadiationModeConverter"/>
+	<converters:IntBitsToSensorTypeConverter x:Key="IntBitsToSensorTypeConverter"/>
+	<converters:IntBitsToSensorMountPositionTypeConverter x:Key="IntBitsToSensorMountPositionTypeConverter"/>
+	<converters:IntBitsToBLDApertureSizeConverter x:Key="IntBitsToBLDApertureSizeConverter"/>
+	<converters:IntBitsToStudyStatusConverter x:Key="IntBitsToStudyStatusConverter"/>
+	<converters:IntBitsToStudyPhaseConverter x:Key="IntBitsToStudyPhaseConverter"/>
+	<converters:IntBitsToStudyTypeConverter x:Key="IntBitsToStudyTypeConverter"/>
+	<converters:EnumMatchToBooleanConverter x:Key="EnumMatchToBooleanConverter"/>
+	<converters:EnumMatchToNotBooleanConverter x:Key="EnumMatchToNotBooleanConverter"/>
+	<converters:RelativePositionConverter x:Key="RelativePositionConverter"/>
+	<converters:BooleanFlipConverter x:Key="BooleanFlipConverter"/>
+	<converters:StringTimeToColorConverter x:Key="StringTimeToColorConverter"/>
+	<!-- ******************************************************************************************************** -->
+</ResourceDictionary>

@@ -1,0 +1,171 @@
+﻿<UserControl x:Class="CountDownTimer.Views.CountDownTimerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vm="clr-namespace:CountDownTimer.ViewModels"
+             mc:Ignorable="d" 
+			 FocusManager.FocusedElement="{Binding ElementName=PlayPause_Button}"
+             d:DataContext="{d:DesignInstance vm:CountDownTimerViewModel}"
+             d:DesignHeight="450" d:DesignWidth="800">
+	<!-- ******************************************************************************************************** -->
+	<!-- ******************************************************************************************************** -->
+
+	<!-- ******************************************************************************************************** -->
+	<Grid>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition/>
+				<RowDefinition Height="Auto"/>
+			</Grid.RowDefinitions>
+			<!-- Count Down Timer and Tokens -->
+			<Grid Grid.Row="0"
+				  HorizontalAlignment="Stretch"
+				  VerticalAlignment="Stretch"
+				  Margin="0,10">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition/>
+				</Grid.ColumnDefinitions>
+				<!-- Token Counter -->
+				<Grid Grid.Column="0"
+                      VerticalAlignment="Stretch"
+                      HorizontalAlignment="Stretch">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto"/>
+						<RowDefinition/>
+						<RowDefinition Height="Auto"/>
+					</Grid.RowDefinitions>
+					<Button	Grid.Row="0"
+							ContentStringFormat="+"
+                            FontSize="36"
+                            Width="50"
+                            Height="50"
+                            VerticalContentAlignment="Center"
+                            VerticalAlignment="Top"
+                            HorizontalAlignment="Center"
+                            Command="{Binding AddTokenCommand}"/>
+
+					<Viewbox Grid.Row="1"
+							 HorizontalAlignment="Stretch"
+							 VerticalAlignment="Stretch">
+						<TextBlock Text="{Binding TokenCount}"
+								   HorizontalAlignment="Stretch"
+								   VerticalAlignment="Stretch"
+								   TextAlignment="Center"
+								   Foreground="White"/>
+					</Viewbox>
+
+					<Button	Grid.Row="2"
+							ContentStringFormat="-"
+                            FontSize="36"
+                            Width="50"
+                            Height="50"
+                            VerticalContentAlignment="Center"
+                            VerticalAlignment="Bottom"
+                            HorizontalAlignment="Center"
+                            Command="{Binding SubtractTokenCommand}"/>
+				</Grid>
+
+				<!-- Separator -->
+				<StackPanel Grid.Column="1" 
+							Orientation="Horizontal">
+					<Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" 
+							   Foreground="White"/>
+				</StackPanel>
+
+				<!-- Count Down Timer -->
+				<Viewbox Grid.Column="1"
+						 HorizontalAlignment="Stretch"
+						 VerticalAlignment="Stretch">
+					<TextBlock x:Name="Time_TextBlock"
+							   Text="{Binding TimeRemaining}"
+							   HorizontalAlignment="Stretch"
+							   VerticalAlignment="Stretch"
+							   TextAlignment="Center"
+							   Foreground="{Binding TimeRemaining, Converter={StaticResource StringTimeToColorConverter}}"/>
+				</Viewbox>
+			</Grid>
+
+			<!-- Separator -->
+			<Separator Grid.Row="1"
+                       HorizontalAlignment="Stretch"
+                       VerticalAlignment="Top"
+                       Foreground="White"/>
+
+			<!-- Controls -->
+			<Grid Grid.Row="1"
+				  Margin="0,10">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition/>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+				</Grid.ColumnDefinitions>
+
+				<Button Grid.Column="0"
+						HorizontalAlignment="Center"
+						VerticalAlignment="Center"
+						Width="100"
+						FontSize="20"
+						Padding="8"
+						ContentStringFormat="Reset"
+						Command="{Binding ResetTimerCommand}"/>
+
+				<StackPanel Grid.Column="1"
+							Orientation="Horizontal"
+							HorizontalAlignment="Center"
+							VerticalAlignment="Center">
+					<TextBox HorizontalAlignment="Center"
+							 VerticalAlignment="Center"
+							 FontSize="22"
+							 Padding="3"
+							 Width="100"
+                             Height="{Binding ActualHeight, ElementName=SetTime_Button}"
+							 VerticalContentAlignment="Center"
+							 Text="{Binding CustomTimerAmount}"
+							 IsEnabled="{Binding IsTimerRunning, Converter={StaticResource BooleanFlipConverter}}"
+							 DataObject.Pasting="TextBox_Pasting"
+							 PreviewTextInput="TextBox_PreviewTextInput">
+						<TextBox.Resources>
+							<Style TargetType="{x:Type Border}">
+								<Setter Property="CornerRadius" Value="5"/>
+							</Style>
+						</TextBox.Resources>
+					</TextBox>
+
+					<Button x:Name="SetTime_Button"
+							HorizontalAlignment="Center"
+							VerticalAlignment="Center"
+							Width="100"
+							FontSize="20"
+							Padding="8"
+							Margin="5,0,0,0"
+							ContentStringFormat="Set"
+							IsEnabled="{Binding IsTimerRunning, Converter={StaticResource BooleanFlipConverter}}"
+							Command="{Binding SetTimerCommand}"/>
+				</StackPanel>
+
+				<Button x:Name="PlayPause_Button"
+						Grid.Column="2"
+						HorizontalAlignment="Center"
+						VerticalAlignment="Center"
+						Width="100"
+						FontSize="20"
+						Padding="8"
+						ContentStringFormat="{Binding PlayPauseText}"
+                        d:ContentStringFormat="Play"
+						Command="{Binding ToggleStartStopCommand}"/>
+
+				<CheckBox Grid.Column="3"
+                          FontSize="20"
+                          VerticalAlignment="Center"
+                          HorizontalAlignment="Center"
+                          Foreground="White"
+                          Content="Sound"
+                          IsChecked="{Binding IsSoundOn}"/>
+			</Grid>
+		</Grid>
+	</Grid>
+	<!-- ******************************************************************************************************** -->
+</UserControl>

@@ -1,0 +1,43 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<!-- ******************************************************************************************************** -->
+	<!-- Backgrounds -->
+	<SolidColorBrush x:Key="Background_MainWindow" Color="#3C3C3C"/>
+	<SolidColorBrush x:Key="Background_InnerView" Color="#D9000000"/>
+	<SolidColorBrush x:Key="Background_ListBoxItem" Color="#B3FFFFFF"/>
+	<SolidColorBrush x:Key="Background_ListBox" Color="#80FFFFFF"/>
+
+	<LinearGradientBrush x:Key="Background_Button" StartPoint="0.5,0" EndPoint="0.5,1">
+		<GradientStop Color="#E2E2E2" Offset="0.0" />
+		<GradientStop Color="#FFB7B7B7" Offset="1.0" />
+	</LinearGradientBrush>
+
+	<LinearGradientBrush x:Key="Background_Border" StartPoint="0.5,0" EndPoint="0.5,1">
+		<GradientStop Color="#FFB7B7B7" Offset="0.0" />
+		<GradientStop Color="#E2E2E2" Offset="1.0" />
+	</LinearGradientBrush>
+	<!-- ******************************************************************************************************** -->
+
+	<!-- ******************************************************************************************************** -->
+	<!-- Midmark Colors -->
+	<SolidColorBrush x:Key="MidmarkMediumDarkGray" Color="#78797A" />
+	<SolidColorBrush x:Key="MidmarkMediumLightGray" Color="#B4B5B6" />
+	<SolidColorBrush x:Key="MidmarkLightGray" Color="#DCDDDE" />
+	<SolidColorBrush x:Key="MidmarkDarkBlue" Color="#276092" />
+	<SolidColorBrush x:Key="MidmarkLightBlue" Color="#57C9E8" />
+	<SolidColorBrush x:Key="MidmarkGreen" Color="#50B946" />
+	<SolidColorBrush x:Key="MidmarkYellow" Color="#FFFF00" />
+	<SolidColorBrush x:Key="MidmarkAmber" Color="#F5A000" />
+	<SolidColorBrush x:Key="MidmarkRed" Color="#DC0000" />
+
+	<!-- Misc. -->
+	<SolidColorBrush x:Key="OverlayBorder" Color="#94979A" />
+	<SolidColorBrush x:Key="OverlayBackground" Color="#141414" />
+	<SolidColorBrush x:Key="ForegroundColored" Color="#2AD91C" />
+	<SolidColorBrush x:Key="ForegroundWhite" Color="White" />
+	<SolidColorBrush x:Key="BorderColor" Color="#3F4141" />
+	<SolidColorBrush x:Key="PopupBackgroundBrush" Color="#212121" />
+	<SolidColorBrush x:Key="ActionBarPopupBackgroundBrush" Color="#0E0E0E" />
+	<SolidColorBrush x:Key="ActionBarPopupHighlightBrush" Color="#3F4141" />
+	<!-- ******************************************************************************************************** -->
+</ResourceDictionary>

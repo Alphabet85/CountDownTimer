@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<!-- ******************************************************************************************************** -->
+	<!-- MergedDictionaries -->
+	<ResourceDictionary.MergedDictionaries>
+		<!-- Converters -->
+		<ResourceDictionary Source="Converters/ConverterDictionary.xaml"/>
+
+		<!-- Styles -->
+		<ResourceDictionary Source="Styles/Button_Styles.xaml"/>
+		<ResourceDictionary Source="Styles/Color_Styles.xaml"/>
+		<ResourceDictionary Source="Styles/Border_Styles.xaml"/>
+		<ResourceDictionary Source="Styles/CheckBox_Styles.xaml"/>
+	</ResourceDictionary.MergedDictionaries>
+	<!-- ******************************************************************************************************** -->
+</ResourceDictionary>

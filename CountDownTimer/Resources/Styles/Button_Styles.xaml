@@ -1,0 +1,156 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:h="clr-namespace:CountDownTimer.Helpers">
+	<!-- ******************************************************************************************************** -->
+	<!-- Default Button -->
+	<Style TargetType="{x:Type Button}">
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					<Grid>
+						<h:BorderClipping x:Name="BorderClipping_Main"
+                                          HorizontalAlignment="Stretch"
+                                          VerticalAlignment="Stretch"
+										  BorderThickness="1"
+										  BorderBrush="{DynamicResource Background_Border}"
+                                          Background="{DynamicResource Background_Button}"
+                                          Style="{DynamicResource Border_DropShadowEffect}"
+                                          Cursor="Hand">
+							<Grid x:Name="Grid_Main"
+                                  HorizontalAlignment="Stretch"
+                                  VerticalAlignment="Stretch">
+								<TextBlock Text="{TemplateBinding ContentStringFormat}"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+										   TextAlignment="Center"
+										   TextWrapping="Wrap"
+                                           Margin="{TemplateBinding Padding}"
+                                           FontWeight="Medium"
+                                           Foreground="Black"/>
+							</Grid>
+						</h:BorderClipping>
+					</Grid>
+
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsMouseOver" Value="True">
+							<Setter TargetName="Grid_Main" Property="Background" Value="#33000000" />
+						</Trigger>
+						<Trigger Property="IsPressed" Value="True">
+							<Setter TargetName="Grid_Main" Property="Background" Value="#66000000" />
+						</Trigger>
+						<Trigger Property="IsEnabled" Value="False">
+							<Setter TargetName="Grid_Main" Property="Background" Value="#BF000000" />
+							<Setter TargetName="BorderClipping_Main" Property="BorderBrush" Value="#B2000000" />
+						</Trigger>
+						<Trigger Property="IsPressed" Value="True">
+							<Setter TargetName="BorderClipping_Main" Property="Margin" Value="0,2,0,-2" />
+						</Trigger>
+						<Trigger Property="IsPressed" Value="True">
+							<Setter TargetName="BorderClipping_Main" Property="BorderBrush" Value="#99000000" />
+						</Trigger>
+					</ControlTemplate.Triggers >
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+
+		<Setter Property="Cursor" Value="Hand"/>
+	</Style>
+	<!-- ******************************************************************************************************** -->
+
+	<!-- ******************************************************************************************************** -->
+	<!-- Button_BasicContent -->
+	<Style x:Key="Button_BasicContent" TargetType="{x:Type Button}">
+		<Setter Property="Cursor" Value="Hand"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					<Border x:Name="Main_Border"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="1"
+                            Height="{TemplateBinding Height}"
+                            Width="{TemplateBinding Width}">
+						<Grid x:Name="Grid_Main"
+                              IsHitTestVisible="True">
+							<TextBlock x:Name="Main_TextBlock"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       FontFamily="Helvetica Neue LT Std"
+                                       FontWeight="Bold"
+                                       Foreground="White"
+                                       Text="{TemplateBinding ContentStringFormat}"
+                                       FontSize="{TemplateBinding FontSize}"
+                                       Margin="{TemplateBinding Padding}"/>
+
+							<Rectangle HorizontalAlignment="Stretch"
+                                       VerticalAlignment="Stretch"
+                                       Fill="Transparent"/>
+						</Grid>
+					</Border>
+
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsEnabled" Value="false">
+							<Setter TargetName="Main_TextBlock" Property="Foreground" Value="#8D8D8D"/>
+						</Trigger>
+
+						<Trigger Property="IsEnabled" Value="true">
+							<Setter TargetName="Main_TextBlock" Property="Foreground" Value="White"/>
+						</Trigger>
+
+						<Trigger Property="IsPressed" Value="true">
+							<Setter TargetName="Grid_Main" Property="Background" Value="White"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<!-- ******************************************************************************************************** -->
+
+	<!-- ******************************************************************************************************** -->
+	<!-- ClickableText_Button -->
+	<Style x:Key="Button_ClickableText" TargetType="{x:Type Button}">
+		<Setter Property="Cursor" Value="Hand"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					<Border x:Name="Main_Border"
+                            BorderBrush="Transparent"
+                            BorderThickness="0"
+                            Height="{TemplateBinding Height}"
+                            Width="{TemplateBinding Width}">
+						<Grid x:Name="Grid_Main"
+                              IsHitTestVisible="True">
+							<Grid Margin="{TemplateBinding Padding}">
+								<TextBlock x:Name="Main_TextBlock"
+									       Text="{TemplateBinding ContentStringFormat}"
+									       Foreground="{TemplateBinding Foreground}"
+									       TextDecorations="Underline"/>
+							</Grid>
+
+							<Rectangle HorizontalAlignment="Stretch"
+                                       VerticalAlignment="Stretch"
+                                       Fill="Transparent"/>
+						</Grid>
+					</Border>
+
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsMouseOver" Value="True">
+							<Setter Property="Cursor" Value="Hand"/>
+						</Trigger>
+
+						<Trigger Property="IsEnabled" Value="false">
+						</Trigger>
+
+						<Trigger Property="IsEnabled" Value="true">
+						</Trigger>
+
+						<Trigger Property="IsPressed" Value="true">
+							<Setter TargetName="Main_TextBlock" Property="Margin" Value="0,2,0,-2"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<!-- ******************************************************************************************************** -->
+</ResourceDictionary>
